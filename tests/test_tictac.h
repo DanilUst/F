@@ -110,7 +110,7 @@ TEST(tictac_checkWinner, positive){
     board[1] = 'X';
     board[2] = 'X';
 
-    EXPECT_EQ(CheckWinner(), 1);
+    EXPECT_EQ(CheckWinner(), X);
 
     
 
@@ -128,7 +128,7 @@ TEST(tictac_checkWinner, positive3){
     board[3] = 'X';
     board[6] = 'X';
 
-    EXPECT_EQ(CheckWinner(), 1);
+    EXPECT_EQ(CheckWinner(), X);
 
     
 
@@ -147,7 +147,7 @@ TEST(tictac_checkWinner, positive4){
 
 
 
-    EXPECT_EQ(CheckWinner(), 1);
+    EXPECT_EQ(CheckWinner(), X);
 
     
 
@@ -169,7 +169,7 @@ TEST(tictac_checkWinner, draw){
 
 
 
-    EXPECT_EQ(CheckWinner(), -1);
+    EXPECT_EQ(CheckWinner(), DRAW);
 
 
 }
