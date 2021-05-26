@@ -37,20 +37,20 @@ void DrawBoard()
 void GetInput(int position_input)
 {
 
-    int flag = 1;
+    
 	// Checks Input Validity //
 	while (true)
     {
 
         if(position_input < 0){
-            flag = 0;
+            
             std::cout << "INVALID POSITION, TRY AGAIN...\n";
             break;
         }
         position_input--;			// Decrement input since arrays begin at 0
         if (position_input > 8 || board[position_input] == 'X' || board[position_input] == 'O')
 		{
-            flag = 0;
+            
             std::cout << "INVALID POSITION, TRY AGAIN...\n";
 
             break;
@@ -59,7 +59,7 @@ void GetInput(int position_input)
 	}
 	// Updates Board Value //
 
-    if ((player == X) && (flag == 1)){
+    if (player == X){
 
         board[position_input] = 'X';
 
