@@ -174,7 +174,7 @@ TEST(tictac_checkWinner, draw){
 
 
 
-    EXPECT_EQ(CheckWinner, -1);
+    EXPECT_EQ(CheckWinner(), -1);
 
 
 }
