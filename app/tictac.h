@@ -4,24 +4,24 @@
 
 #include <iostream>
 
-//-FUNCTION PROTOTYPES
-void DrawBoard();		// Draws the board each turn!
-void GetInput(int position_number);		// Asks player for (valid) input and returns that value!
-int CheckWinner();		// Checks for a winner!
+// Функции
+void DrawBoard();		
+void GetInput(int position_number);		
+int CheckWinner();		
 
-//-CONSTANTS
-const int FREE = 0;		// Board slot not taken
+// Константы
+		
 const int FALSE = 0;
 const int X = 1;		// Player X
 const int O = 2;		// Player Y
-const int DRAW = -1;	// Game is a draw
+const int DRAW = -1;	
 
-//-GLOBAL VARS
-char board[9] = { '1','2','3','4','5','6','7','8','9' };	// The board!
-int player = X;			// The player!
+//Карта
+char board[9] = { '1','2','3','4','5','6','7','8','9' };	
+int player = X;			
 
 
-//-FUNCTION DEFINITIONS (View Prototypes for Info)
+
 void DrawBoard()
 {
 
@@ -38,7 +38,7 @@ void GetInput(int position_input)
 {
 
     
-	// Checks Input Validity //
+	
 	while (true)
     {
 
@@ -47,7 +47,7 @@ void GetInput(int position_input)
             std::cout << "INVALID POSITION, TRY AGAIN...\n";
             break;
         }
-        position_input--;			// Decrement input since arrays begin at 0
+        position_input--;			
         if (position_input > 8 || board[position_input] == 'X' || board[position_input] == 'O')
 		{
             
@@ -57,7 +57,7 @@ void GetInput(int position_input)
 		}
 		break;
 	}
-	// Updates Board Value //
+	
 
     if (player == X){
 
@@ -70,25 +70,27 @@ void GetInput(int position_input)
     }
 }
 
-// DISCLAIMER: This function is still a spaghetti mess-- but higher quality spaghetti.
+
 int CheckWinner()
 {
 
-	// Check Row Wins //
+	// Проверка по горизонтали //
 	if (board[0] == board[1] && board[1] == board[2]) return player;
 	else if (board[3] == board[4] && board[4] == board[5]) return player;
 	else if (board[6] == board[7] && board[7] == board[8]) return player;
 
-	// Check Column Wins //
+	// Проверка по вертикали //
     else if (board[0] == board[3] && board[3] == board[6]) return player;
     else if (board[1] == board[4] && board[4] == board[7]) return player;
     else if (board[2] == board[5] && board[5] == board[8]) return player;
 
-     //Check Diagonals //
+     // Проверка по диагонали //
     else if (board[0] == board[4] && board[4] == board[8]) return player;
     else if (board[2] == board[4] && board[4] == board[6]) return player;
-	    
-	if(board[0] != '1' && board[1] != '2' && board[2] != '3' && board[3] !='4' && board[4] != '5' && board[5] != '6' && board[6] != '7' && board[7] != '8' && board[8] != '9'){
+	  // Проверка на ничью //  
+    if(board[0] != '1' && board[1] != '2' && board[2] != '3' && 
+       board[3] !='4' && board[4] != '5' && board[5] != '6' && board[6] != '7' && 
+       board[7] != '8' && board[8] != '9'){
 
         
         return DRAW;
