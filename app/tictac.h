@@ -87,6 +87,13 @@ int CheckWinner()
      //Check Diagonals //
     else if (board[0] == board[4] && board[4] == board[8]) return player;
     else if (board[2] == board[4] && board[4] == board[6]) return player;
+	    
+	if(board[0] != '1' && board[1] != '2' && board[2] != '3' && board[3] !='4' && board[4] != '5' && board[5] != '6' && board[6] != '7' && board[7] != '8' && board[8] != '9'){
+
+        std::cout << "DRAW";
+        return DRAW;
+
+    }
 
     else return FALSE;
 }
