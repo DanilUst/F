@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock-matchers.h>
-#include <iostream>
-#include <cstdlib>
+
 #include "tictac.h"
 
 TEST(tictac_drawBoard, positive)
@@ -113,13 +112,13 @@ TEST(tictac_checkWinner, positive){
 
     EXPECT_EQ(CheckWinner(), 1);
 
-    // ASSERT_TRUE(CheckWinner());
+    
 
 }
 
 
 TEST(tictac_checkWinner, positive3){
-    //    player = X;
+    
     //возвращаем игровое поле в исходное состояние
     board[1] = '2';
     board[2] = '3';
@@ -131,7 +130,7 @@ TEST(tictac_checkWinner, positive3){
 
     EXPECT_EQ(CheckWinner(), 1);
 
-    // ASSERT_TRUE(CheckWinner());
+    
 
 
 }
@@ -150,17 +149,13 @@ TEST(tictac_checkWinner, positive4){
 
     EXPECT_EQ(CheckWinner(), 1);
 
-    //ASSERT_TRUE(CheckWinner());
+    
 
 }
 TEST(tictac_checkWinner, draw){
     //const int X = 1;		// Player X
     //const int O = 2;		// Player Y
-    //возвращаем игровое поле в исходное состояние
-
     
-
-
 
     board[0] = 'X';
     board[1] = 'O';
