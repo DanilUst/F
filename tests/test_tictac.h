@@ -158,7 +158,7 @@ TEST(tictac_checkWinner, draw){
     //const int O = 2;		// Player Y
     //возвращаем игровое поле в исходное состояние
 
-    std::string output_text = "DRAW";
+    
 
 
 
@@ -172,13 +172,9 @@ TEST(tictac_checkWinner, draw){
     board[7] = 'X';
     board[8] = 'O';
 
-    testing::internal::CaptureStdout();
 
-    CheckWinner();
 
-    std::string text = testing::internal::GetCapturedStdout();
-
-    EXPECT_STREQ(text.c_str(), output_text.c_str());
+    EXPECT_EQ(CheckWinner, -1);
 
 
 }
