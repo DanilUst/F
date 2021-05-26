@@ -153,3 +153,32 @@ TEST(tictac_checkWinner, positive4){
     //ASSERT_TRUE(CheckWinner());
 
 }
+TEST(tictac_checkWinner, draw){
+    //const int X = 1;		// Player X
+    //const int O = 2;		// Player Y
+    //возвращаем игровое поле в исходное состояние
+
+    std::string output_text = "DRAW";
+
+
+
+    board[0] = 'X';
+    board[1] = 'O';
+    board[2] = 'X';
+    board[3] = 'O';
+    board[4] = 'O';
+    board[5] = 'X';
+    board[6] = 'X';
+    board[7] = 'X';
+    board[8] = 'O';
+
+    testing::internal::CaptureStdout();
+
+    CheckWinner();
+
+    std::string text = testing::internal::GetCapturedStdout();
+
+    EXPECT_STREQ(text.c_str(), output_text.c_str());
+
+
+}
